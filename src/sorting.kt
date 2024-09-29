@@ -74,7 +74,7 @@ fun getQuickTime(arr: IntArray, print: Boolean = false): Unit{
 }
 
 fun main(){
-    val arr = IntArray(100) { Random.nextInt(0, 1000) }
+    val arr = IntArray(1000) { Random.nextInt(0, 1000) }
     getQuickTime(arr.copyOf(), true);
     getBubleTime(arr.copyOf());
 }
