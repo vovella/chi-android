@@ -55,9 +55,9 @@ fun quickSort(arr: IntArray, left: Int = 0, right: Int = arr.size - 1): IntArray
 
 fun getBubleTime(arr: IntArray, print: Boolean = false): Unit{
     val bubbleSortTime = measureNanoTime {
-        val resultBubble = bubbleSort(arr) 
+        bubbleSort(arr) 
         if(print){
-            println("BubbleSort result: ${resultBubble.joinToString(" ")}")
+            println("BubbleSort result: ${arr.joinToString(" ")}")
         }
     }
     println("BubbleSort time: $bubbleSortTime ms")
@@ -65,16 +65,16 @@ fun getBubleTime(arr: IntArray, print: Boolean = false): Unit{
 
 fun getQuickTime(arr: IntArray, print: Boolean = false): Unit{
     val quickSortTime = measureNanoTime {
-        val resultQuick = quickSort(arr) 
+        quickSort(arr) 
         if(print){
-            println("QuickSort result: ${resultQuick.joinToString(" ")}")
+            println("QuickSort result: ${arr.joinToString(" ")}")
         }
     }
     println("QuickSort time: $quickSortTime ms")
 }
 
 fun main(){
-    val arr = IntArray(1000) { Random.nextInt(0, 1000) }
-    getQuickTime(arr.copyOf(), true);
+    val arr = IntArray(1000) { Random.nextInt(0, 100000) }
+    getQuickTime(arr.copyOf());
     getBubleTime(arr.copyOf());
 }
