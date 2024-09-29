@@ -1,7 +1,6 @@
 interface AbstractFactory{
     fun createUserNotification(): AbstractUserNotification;
     fun createAdminNotification():AbstractAdminNotification;
-
 }
 
 interface AbstractNotification{
@@ -34,4 +33,7 @@ fun main(){
     var factory = TextNotificationFactory();
     val userNotifacation = factory.createUserNotification();
     println(userNotifacation.getNotification("Security alert"));
+
+    val adminNotifacation = factory.createAdminNotification();
+    println(adminNotifacation.getNotification("Security alert"));
 }
