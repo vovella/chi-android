@@ -2,41 +2,53 @@ package com.example.myapplication
 
 import android.content.BroadcastReceiver
 import android.content.Context
+import android.os.Bundle
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.example.myapplication.databinding.ActivityMainBinding
+import androidx.core.content.ContextCompat
+import com.example.myapplication.databinding.ActivitySecondBinding
 
-class MainActivity : ComponentActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class SecondActivity : ComponentActivity() {
 
     private var counter: Int = 0
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         counter = intent.getIntExtra("counter_value", 0);
         updateCounterText(counter)
 
-        binding.goToSecondActivity.setOnClickListener{
-            startActivity(Intent(this, SecondActivity::class.java).putExtra("counter_value", counter))
+        binding.goToMainActivity.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java).putExtra("counter_value", counter))
         }
 
-        binding.increaseButton.setOnClickListener {
+        binding.increaseButtonSecond.setOnClickListener {
             counter++
+            //binding.counterTextSecond.text = "Counter: $counter"
+            //this.counterText=counter
+            //updateCounterText(binding)
+            // Передача значення в сервіс (можна додати сервіс для цього)
+
+            // Передача значення в сервіс (можна додати сервіс для цього)
             val serviceIntent = Intent(this, CounterService::class.java)
+            // Передаємо значення лічильника в сервіс
             serviceIntent.putExtra("counter_value", counter)
+            // Запускаємо сервіс
             startService(serviceIntent)
+
+            //val broadcastIntent = Intent("com.example.UPDATE_COUNTER")
+            //broadcastIntent.putExtra("counter_value", counter)
+            //sendBroadcast(broadcastIntent)
         }
     }
 
     private fun updateCounterText(counter: Int) {
-        binding.counterText.text = "Counter: ${counter.toString()}"
+        binding.counterTextSecond.text = "Counter: ${counter.toString()}"
     }
 
     override fun onResume() {
@@ -58,5 +70,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-

@@ -1,0 +1,28 @@
+<!-- activity_main.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="48dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/counter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Counter: 0"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/increase_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increase Counter"/>
+
+    <Button
+        android:id="@+id/go_to_second_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Second Activity"/>
+</LinearLayout>
