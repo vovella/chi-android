@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etGroupName"
+        android:layout_width="250dp"
+        android:hint="Enter group name"
+        android:layout_height="48dp" />
+
+    <Button
+        android:id="@+id/btnSaveGroup"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+
+        android:text="Save Group" />
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+<EditText
+    android:layout_width="250dp"
+    android:layout_height="48dp"
+    android:id="@+id/etStudentName"
+    android:hint="name"
+    />
+<EditText
+    android:id="@+id/etStudentSurname"
+    android:hint="surname"
+    android:layout_width="250dp"
+    android:layout_height="48dp" />
+<EditText android:id="@+id/etStudentAge"
+    android:layout_width="250dp"
+    android:hint="age"
+    android:layout_height="48dp"/>
+<EditText
+    android:id="@+id/etGroupId"
+    android:layout_width="250dp"
+    android:hint="groupId"
+    android:layout_height="48dp"/>
+<Button
+    android:id="@+id/btnSaveStudent"
+    android:text="Save Student"
+    android:layout_width="250dp"
+    android:layout_height="48dp"
+    />
+    </LinearLayout>
